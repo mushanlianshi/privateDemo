@@ -1,0 +1,93 @@
+//
+//  LBNHPrefixHeader.pch
+//  nhExample
+//
+//  Created by liubin on 17/3/10.
+//  Copyright © 2017年 liubin. All rights reserved.
+//
+
+#ifndef LBNHPrefixHeader_pch
+#define LBNHPrefixHeader_pch
+#import "LBNHCommonNotification.h"
+#import "LBNHCommonAPIConsant.h"
+#import "LBCommonDefine.h"
+#import "UIView+LBBorder.h"
+#import "Masonry.h"
+#import "UIView+LBFrame.h"
+#import "LBNHCommonConstant.h"
+#import "LBTips.h"
+#import "UIView+LBLayer.h"
+#import "MBProgressHUD+LBAddtion.h"
+#import "UIButton+LBInit.h"
+#import "ThirdSDKConfig.h"
+#import "NSObject+LBLog.h"
+#import "LBConstraintAdaptor.h"
+
+// 不缓存的方式读取图片  全名的图片
+#define ImageFiled(imageName) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageName ofType:nil]];
+//缓存的方式读取图片
+#define ImageNamed(imageName) [UIImage imageNamed:imageName]
+
+#define SHOW_ALERT(string) [LBAlertController showAlertTitle:@"提示" content:string currentController:nil]
+
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight   [UIScreen mainScreen].bounds.size.height
+
+#define kTabbarHeight  49
+#define kNavibarHeight   64
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;//使用方法 WS(weakSelf)  下面就可以直接用weakSelf
+#define WeakObject(weakSelf,object)  __weak __typeof(&*object)weakSelf = object;//使用方法 WS(weakSelf)  下面就可以直接用weakSelf
+
+//.h文件中定义的单例宏
+#define single_interface(class) +(class *)shared##class;
+
+// .m实现文件中的
+// \ 代表下一行也属于宏
+// ## 是分隔符
+//复写allocWithZone主要是防止alloc出新的对象  保证alloc出来的对象也是我们单例出来的
+#define single_implementation(class) \
+static class * _instance;    \
++(class *)shared##class{    \
+if (_instance==nil) {   \
+_instance=[[self alloc] init];  \
+}   \
+return _instance;\
+} \
++(instancetype)allocWithZone:(struct _NSZone *)zone{    \
+static dispatch_once_t onceToken;   \
+dispatch_once(&onceToken, ^{    \
+_instance=[super allocWithZone:zone];   \
+}); \
+return _instance;   \
+}
+
+
+#define kFont(fontSize) [UIFont systemFontOfSize:fontSize]
+
+#define kIntegerToStr(i) [NSString stringWithFormat: @"%ld", i]
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifndef dispatch_main_async_safe
+#define dispatch_main_async_safe(block)\
+if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(dispatch_get_main_queue())) == 0) {\
+block();\
+} else {\
+dispatch_async(dispatch_get_main_queue(), block);\
+}
+#endif
+/** #ifdef DEBUG 那么"DEBUG"在哪里定义的呢? 在 "Target > Build Settings > Preprocessor Macros > Debug" 里有一个"DEBUG=1" release 没有定义 */
+#ifdef DEBUG
+#define MyLog(...) NSLog(__VA_ARGS__)
+#else
+#define MyLog(...)
+#endif
+
+
+#define KeyWindow  [UIApplication sharedApplication].keyWindow
+
+#define kDocumentPath NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]
+
+#endif /* LBNHPrefixHeader_pch */

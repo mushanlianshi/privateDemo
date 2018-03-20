@@ -1,0 +1,8 @@
+1.封装了类似微信朋友圈点击全屏，在点击还原，左右滑动加载上下图片的view
+2.使用方法：在tableview或则collectionView的点击事件中
+SDPhotoBrowser *browser = [[SDPhotoBrowser alloc] init];
+browser.currentImageIndex = indexPath.row;
+browser.sourceImagesContainerView = self.collectionView;
+browser.imageCount = self.images.count;
+browser.delegate = self;
+[browser show];

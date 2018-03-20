@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2011-2017 SRSQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcY-k3-wdC">
+                                <rect key="frame" x="98" y="621" width="179.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="专属私人社区交流平台 v 1.4.0(1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxF-77-d4q">
+                                <rect key="frame" x="93" y="595" width="190.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_man" translatesAutoresizingMaskIntoConstraints="NO" id="cyv-i4-8U6">
+                                <rect key="frame" x="30" y="395" width="120" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bVh-T5-sFq"/>
+                                    <constraint firstAttribute="width" constant="120" id="ue9-iy-91K"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_woman" translatesAutoresizingMaskIntoConstraints="NO" id="YdH-mH-ckW">
+                                <rect key="frame" x="225" y="265" width="120" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="dT0-dy-w25"/>
+                                    <constraint firstAttribute="width" constant="120" id="g85-yB-9PW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DcY-k3-wdC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MLX-7Z-vMj"/>
+                            <constraint firstItem="FxF-77-d4q" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ng3-IU-oF9"/>
+                            <constraint firstAttribute="trailing" secondItem="YdH-mH-ckW" secondAttribute="trailing" constant="30" id="TfG-VT-BaY"/>
+                            <constraint firstItem="FxF-77-d4q" firstAttribute="top" secondItem="cyv-i4-8U6" secondAttribute="bottom" constant="100" id="bqx-zR-Rrq"/>
+                            <constraint firstItem="DcY-k3-wdC" firstAttribute="top" secondItem="FxF-77-d4q" secondAttribute="bottom" constant="10" id="iwh-ER-IhW"/>
+                            <constraint firstItem="cyv-i4-8U6" firstAttribute="top" secondItem="YdH-mH-ckW" secondAttribute="bottom" constant="30" id="oAl-Ft-bjw"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="DcY-k3-wdC" secondAttribute="bottom" constant="30" id="qW3-rM-5ch"/>
+                            <constraint firstItem="cyv-i4-8U6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="30" id="rAs-pc-CR1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chat_man" width="124" height="92"/>
+        <image name="chat_woman" width="126" height="90"/>
+    </resources>
+</document>
